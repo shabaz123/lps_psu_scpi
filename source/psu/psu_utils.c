@@ -285,12 +285,12 @@ scpi_result_t SCPI_PsuOutState(scpi_t * context) {
         return SCPI_RES_ERR;
     }
     // read first parameter if present
-    int32_t param1;
-    if (!SCPI_ParamInt32(context, &param1, TRUE)) {
+    scpi_bool_t param1;
+    if (!SCPI_ParamBool(context, &param1, TRUE)) {
         return SCPI_RES_ERR;
     }
     // set the output state by issuing a command to the PSU
-    do_outstate(chan, param1);
+    do_outstate(chan, param1 ? 1 : 0); // do_outstate expects int value 0 or 1
     return SCPI_RES_OK;
 }
 
