@@ -175,24 +175,6 @@ void initPsuUtils() {
     return;
 }
 
-#ifdef JUNK
-uint32_t psuPinCount() {
-    return(3);
-}
-
-void initPsuPins() {
-    return;
-}
-
-void setPsuVoltage(uint32_t index, float value) {
-    return;
-}
-
-float getPsuVoltage(uint32_t index) {
-    return(0.0);
-}
-#endif
-
 // ************* SCPI related functions *************
 // retrieve context number from SCPI commands (this will be the PSU channel number)
 int32_t get_context_number(scpi_t * context) {
